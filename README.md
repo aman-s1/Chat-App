@@ -12,6 +12,7 @@
 ## Functionalities
 - Implemented authentication of user using JSON web Token.<br>
 - Storing user's password as encrypted password.<br>
+- In left side of window, user will be shown the list of group in which specific user is present.<br>
 - User is able to create group after clicking on create a group button and can participants to group.<br>
 - User can send message in group after selecting group.<br>
 - If user is admin of group, then user will have additional functionality to add or remove user from group.<br>
