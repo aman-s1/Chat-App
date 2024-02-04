@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+</head>
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f5c6cb; 
+        color: #333;
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .login-container {
+        border-radius: 8px;
+        padding: 90px;
+        background-color: #f8d7da;
+    }
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px; /* Adjust as needed */
+        margin: 0 auto;
+        text-align: center;
+    }
+    input {
+        margin-bottom: 15px;
+        padding: 8px;
+        border: 1px solid #d9534f;
+        border-radius: 4px;
+        background-color: #fff;
+        color: #333;
+    }
+    button {
+        background-color: #d9534f;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #c9302c;
+    }
+    h3 {
+        color: #d9534f;
+    }
+    a {
+        font-size: small;
+        color: #d9534f;
+    }
+    .left-anchor {
+        align-self: flex-start;
+    }
+    .right-anchor {
+        align-self: flex-end;
+    }
+    #anchor-tags {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+    #inc-cred {
+        display: none;
+        color: red;
+    }
+    #no-auth {
+        display: none;
+        color: red;
+    }
+
+</style>
+
+<body>
+    <div class="login-container">
+        <form class="login-form" onsubmit="login(event)">
+            <h3>Sign In</h3>
+            <input type="text" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <div id="anchor-tags">
+                <a href="../signup/signUp.html" class="left-anchor">Sign Up</a>
+                <a href="../forgot/forgotPass.html" class="right-anchor">Forgot Password</a>
+            </div>
+            <div id="inc-cred">
+                <h5>User does not exist</h5>
+            </div>
+            <div id="no-auth">
+                <h5>User not authorized</h5>
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+<script src="./login.js"></script>
+
+</html>

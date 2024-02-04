@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+</head>
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f5c6cb; 
+        color: #333;
+    }
+
+    .signUp-container {
+        border-radius: 8px;
+        padding: 90px;
+        background-color: #f8d7da;
+    }
+
+    .signUp-form {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    input {
+        margin-bottom: 15px;
+        padding: 8px;
+        border: 1px solid #d9534f;
+        border-radius: 4px;
+        background-color: #fff;
+        color: #333;
+    }
+
+    button {
+        background-color: #d9534f;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #c9302c;
+    }
+
+    h3 {
+        color: #d9534f;
+    }
+
+    a {
+        font-size: small;
+        color: #d9534f;
+    }
+
+    #anchor-tags {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    #user-exists {
+        display: none;
+        padding-top: 15px;
+        color: red;
+    }
+
+</style>
+
+<body>
+    <div class="signUp-container">
+        <form class="signUp-form" onsubmit="signUp(event)">
+            <h3>Sign Up</h3>
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="text" id="email" name="email" placeholder="Email" required>
+            <input type="text" id="phno" name="phno"  placeholder="Phone Number" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <div id="anchor-tags">
+                <a href="../login/login.html" class="left-anchor">Already User: Sign In</a><!--
+                --><a href="../forgot/forgotPass.html" class="right-anchor">Forgot Password</a>
+            </div>
+            <button type="submit">Sign Up</button>
+            <div id="user-exists">
+                <h5>User already exists</h5>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+<script src="./signUp.js"></script>
+
+</html>

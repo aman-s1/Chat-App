@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5c6cb; 
+            color: #333;
+            position: relative; /* Added position relative */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .navbar {
+            background-color: #d9534f;
+            text-align: center;
+            font-size: xx-large;
+            font-style: italic;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        #error-box {
+            color: red;
+            margin-bottom: 10px;
+        }
+
+        #createForm {
+            width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #createForm label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #participantslist input {
+            margin-bottom: 10px;
+        }
+
+        #createGroup {
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        input {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">Chat Me</nav>
+
+    <div id="createForm">
+        <form id="groupForm">
+            <label for="groupName">Group Name:</label>
+            <input type="text" id="groupName" name="groupName" required>
+
+            <label for="participants">Participants:</label>
+            <div id="participantslist"></div>
+            <button type="button" id="addMoreParticipants">Add Participants</button>
+
+            <button type="button" id="createGroup" onclick="createGroup(event)">Create Group</button>
+        </form>
+    </div>
+
+    <div id="error-box"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="./group.js"></script>
+</body>
+</html>

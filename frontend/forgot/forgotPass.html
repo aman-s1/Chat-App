@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+</head>
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f5c6cb; 
+        color: #333;
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .forgot-container {
+        border-radius: 8px;
+        padding: 90px;
+        background-color: #f8d7da;
+    }
+    .forgot-form {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px; /* Adjust as needed */
+        margin: 0 auto;
+        text-align: center;
+    }
+    input {
+        margin-bottom: 15px;
+        padding: 8px;
+        border: 1px solid #d9534f;
+        border-radius: 4px;
+        background-color: #fff;
+        color: #333;
+    }
+    button {
+        background-color: #d9534f;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #c9302c;
+    }
+    h3 {
+        color: #d9534f;
+    }
+
+</style>
+
+<body>
+    <div class="forgot-container">
+        <form class="forgot-form" onsubmit="forgotPass(event)">
+            <h3>Forgot Password</h3>
+            <input type="text" id="email" name="email" placeholder="Email" required>
+            <button type="submit">Recover Password</button>
+            <div id="rec-pass">
+                <h5 id="pass" style="color: red;"></h5>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+<script src="./forgot.js"></script>
+
+</html>

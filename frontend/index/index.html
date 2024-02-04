@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5c6cb; 
+            color: #333;
+            position: relative; /* Added position relative */
+        }
+
+        .navbar {
+            background-color: #d9534f;
+            text-align: center;
+            font-size: xx-large;
+            font-style: italic;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+        }
+
+        #groups {
+            float: left;
+            width: 20%;
+            background-color: #f5c6cb;
+            padding: 8px;
+            height: 80%;
+            border-right: 5px solid #d9534f;
+            overflow-y: auto;
+        }
+        
+        #creategroup {
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: auto;
+            display: block;
+        }
+
+        #messages {
+            margin-left: 20%;
+            padding: 8px;
+            height: 80%;
+            overflow-y: scroll;
+            padding: 8px;
+        }
+
+        #messageToSend {
+            position: fixed;
+            bottom: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f5c6cb;
+            border-top: 5px solid #d9534f;
+        }
+
+        #messageInput {
+            flex: 0.93;
+            padding: 8px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        #sendButton {
+            flex: 0.06;
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #oldercontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #loadOlderChatsBtn {
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: none;
+        }
+
+        ul {
+            padding-top: 15px;
+            list-style-type: none;
+            margin-left: 0px;
+        }
+        
+        #groupList {
+            color: #d9534f;
+            padding: 10px;
+            margin: 0;
+            list-style-type: none;
+        }
+        #groupList li {
+            margin-bottom: 10px;
+            font-style: italic;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.3s ease; /* Add a smooth color transition effect */
+        }
+        #groupList li:hover {
+            color: #333; /* Change the text color on hover */
+        }
+        #groupName {
+            text-align: center;
+        }
+        #adddeleteUser {
+            margin-top: auto;
+            margin-left: 30px;
+            display: flex;
+            align-items: center;
+        }
+        #addUser, #removeUser {
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            padding: 8px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: none;
+            margin-right: 10px;
+        }
+        #user-list {
+            margin-left: 40px;
+        }
+        #error-box {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">Chat Me</nav>
+
+    <div id="groups">
+        <button id="creategroup">Create a Group</button>
+        <ul id="groupList">
+        </ul>
+        <div id="adddeleteUser">
+            <button id="addUser" onclick="addUsertoGroup(event)">Add User</button>
+            <button id="removeUser" onclick="removeUserfromGroup(event)">Remove User</button>
+        </div>
+    </div>
+
+    <div id="messages">
+        <div id="groupName">
+            <h3 id="group-name"></h3>
+        </div>
+        <div id="user-list"></div>
+        <div id="oldercontainer">
+            <button id="loadOlderChatsBtn">Load Older Chats</button>
+        </div>
+        <ul id="oldermsg">
+        </ul>
+        <ul id="msg">
+        </ul>
+    </div>
+
+    <div id="messageToSend">
+        <input type="text" id="messageInput" placeholder="Type your message...">
+        <button id="sendButton" onclick="sendmsg(event)">Send</button>
+        <!--<input type="file" id="imageInput" accept="image/*">
+        <button id="sendButton" onclick="sendimg(event)">Img</button>-->
+    </div>
+    <div id="error-box">
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+<script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
+<script src="./index.js"></script>
+</html>
