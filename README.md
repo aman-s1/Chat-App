@@ -10,13 +10,13 @@
 - SQL<br>
 
 ## Functionalities
-  -Implemented authentication of user using JSON web Token.<br>
-  -Storing user's password as encrypted password.<br>
-  -User is able to create group after clicking on create a group button and can participants to group.<br>
-  -User can send message in group after selecting group.<br>
-  -If user is admin of group, then user will have additional functionality to add or remove user from group.<br>
-  -In top section of chats, user will be shown the user's list in specific group.<br>
-  -Implemented Loda older chats functionality to get older chats from database.<br>
+- Implemented authentication of user using JSON web Token.<br>
+- Storing user's password as encrypted password.<br>
+- User is able to create group after clicking on create a group button and can participants to group.<br>
+- User can send message in group after selecting group.<br>
+- If user is admin of group, then user will have additional functionality to add or remove user from group.<br>
+- In top section of chats, user will be shown the user's list in specific group.<br>
+- Implemented Loda older chats functionality to get older chats from database.<br>
 
 ## Results
 
