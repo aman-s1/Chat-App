@@ -2,7 +2,7 @@
   A Chat Application to do chatting in groups.
 
 ## Technologies Used
-  Node.js<br>
+  - Node.js<br>
   Express<br>
   -JavaScript<br>
   -HTML<br>
