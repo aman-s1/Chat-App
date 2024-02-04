@@ -2,12 +2,12 @@
   A Chat Application to do chatting in groups.
 
 ## Technologies Used
-  - Node.js<br>
-  Express<br>
-  -JavaScript<br>
-  -HTML<br>
-  -CSS<br>
-  -SQL<br>
+- Node.js<br>
+- Express<br>
+- JavaScript<br>
+- HTML<br>
+- CSS<br>
+- SQL<br>
 
 ## Functionalities
   -Implemented authentication of user using JSON web Token.<br>
